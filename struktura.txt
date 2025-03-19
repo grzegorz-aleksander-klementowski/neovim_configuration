@@ -1,0 +1,26 @@
+~/.config/nvim/
+├── init.lua       # Loads everything, minimal logic here
+├── lua/
+│   ├── core/      # Core settings
+│   │   ├── options.lua   # Essential Vim options
+│   │   ├── keymaps.lua   # All keybindings
+│   │   ├── autocommands.lua  # Automation
+│   ├── plugins/   # Plugin configurations
+│   │   ├── lazy.lua       # Plugin loader
+│   │   ├── lsp.lua        # Language Server Configs
+│   │   ├── cmp.lua        # Autocompletion
+│   │   ├── telescope.lua  # Fuzzy Finder
+│   │   ├── treesitter.lua # Syntax highlighting
+│   │   ├── statusline.lua # Status line
+│   │   ├── autopairs.lua  # Auto brackets, quotes
+│   │   ├── git.lua        # Git integration
+│   │   ├── misc.lua       # Miscellaneous utilities
+│   ├── ui/        # Appearance and theme
+│   │   ├── colors.lua     # Colorscheme
+│   │   ├── lualine.lua    # Status bar
+│   │   ├── nvim-tree.lua  # File Explorer
+│   │   ├── indent.lua     # Indentation guides
+│   ├── utils/     # Utility functions
+│   │   ├── general.lua    # Helper functions
+│   │   ├── format.lua     # Autoformatters
+
