@@ -83,7 +83,7 @@ vim.diagnostic.config({
   float = {
     focusable = true,
     border = "rounded",
-    source = "true",
+    source = true,
     header = "🏮️ LSP WARNING 🏮️", -- Custom title for float window
     prefix = "⚠️ ",
   },

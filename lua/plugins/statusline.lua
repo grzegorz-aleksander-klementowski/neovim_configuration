@@ -6,7 +6,7 @@ local text_terminals = term:find("alacritty") or term:find("xfce") or term:find(
 
 -- Functions for lualine components
 local function lsp_client()
-  local clients = vim.lsp.get_active_clients()
+  local clients = vim.lsp.get_clients()
   if next(clients) == nil then return "No LSP" end
   local names = {}
   for _, client in ipairs(clients) do
