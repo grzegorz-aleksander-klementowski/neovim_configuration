@@ -2,7 +2,30 @@
 local lspconfig = require("lspconfig")
 
 local servers = {
-  rust_analyzer = { filetypes = { "rust" } },
+  rust_analyzer = {
+    filetypes = { "rust" },
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy",
+          extraArgs = {
+            "--all-targets",
+            "--all-features",
+            "--",
+            "-W", "clippy::all",
+            "-W", "clippy::pedantic",
+            "-W", "clippy::nursery"
+            -- Uncomment the following line if you want to treat all warnings as errors:
+            -- ,"-D", "warnings"
+          },
+        },
+        diagnostics = {
+          enable = true,
+          disabled = {},
+        },
+      },
+    },
+  },
   pyright       = { filetypes = { "python" } },
   ts_ls         = { filetypes = { "javascript", "typescript" } },
   sqlls         = { filetypes = { "sql" } },
@@ -54,17 +77,23 @@ vim.diagnostic.config({
     spacing = 4,
   },
   signs = true,
-  underline = false,
+  underline = true,         -- This uses the DiagnosticUnderline* highlight groups
   update_in_insert = false, -- Do not update diagnostics while typing
   severity_sort = true,
   float = {
-    focusable = false,
+    focusable = true,
     border = "rounded",
-    source = "always",
+    source = "true",
     header = "🏮️ LSP WARNING 🏮️", -- Custom title for float window
     prefix = "⚠️ ",
   },
 })
+
+-- Set up Diagnostic Undercurl Underlines for a curly effect
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = "#FF0000" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#FFCC00" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#00FFFF" })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#00FF00" })
 
 -- Enable Signature Help (Function Parameter Hints) on CursorHoldI
 vim.api.nvim_create_autocmd("CursorHoldI", {
