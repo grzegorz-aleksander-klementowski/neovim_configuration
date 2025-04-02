@@ -53,7 +53,7 @@ require("lazy").setup({
   "folke/which-key.nvim",  -- adds trot for keybindings
   "numToStr/Comment.nvim", -- an easy way to comments selected text in any programming language
   "nacro90/numb.nvim",     -- shows the line where want to jump in (ei. 123 line when type `:123`)
-  "tpope/vim-fugitive",    -- GIt push, commit puls
+  "tpope/vim-fugitive",    -- Git push, commit puls
 
   -- dependencies
   "nvim-treesitter/nvim-treesitter-textobjects", -- treesitter dependency to see objects and select them
@@ -62,7 +62,7 @@ require("lazy").setup({
   "JoosepAlviste/nvim-ts-context-commentstring", -- dependency for comments-nvim
 })
 
---[[ *** Do sprawdzenia poten *** ]]
+--[[ *** Do sprawdzenia potem *** ]]
 -- "nvimdev/lspsaga.nvim",             -- Sprawdzić to potem w wolnym czasie. better diagnostics, floating code actions, and an overall LSP experience
 -- "Shatur/neovim-session-manager",   -- Używać od wersji 0.10 (now in Debian is 0.9.5). Saves a nvim sesion
 -- "gorbit99/codewindow.nvim",              -- Minimapa - do sprawdzenia na potem
