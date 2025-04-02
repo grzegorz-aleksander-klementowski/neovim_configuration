@@ -1,6 +1,6 @@
 vim.opt.listchars = { tab = "→ ", trail = "·", nbsp = "␣" }
-vim.opt.showcmd = true             -- Show command in bottom bar
-vim.opt.laststatus = 3             -- Always show statusline (modern UI)
+vim.opt.showcmd = true -- Show command in bottom bar
+vim.opt.laststatus = 3 -- Always show statusline (modern UI)
 
 -- vim.opt.termguicolors = true -- Ensure true color
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", fg = "#ffffff" }) -- Keep transparent but set white text

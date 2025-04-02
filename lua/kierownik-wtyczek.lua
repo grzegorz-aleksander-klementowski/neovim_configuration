@@ -1,5 +1,6 @@
 -- Ensure lazy.nvim is installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+---@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git", "clone", "--filter=blob:none",
@@ -8,13 +9,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-ui = {
-  border = "rounded",    -- Adds a rounded border/ "double" -- Use double-line border
-  title = " Lazy.nvim ", -- Adds a title at the top
-  title_pos = "center",  -- Centers the title
-
-}
 
 -- Load Plugins
 require("lazy").setup({

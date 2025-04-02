@@ -1,6 +1,6 @@
 -- Check if we're using a text terminal (Alacritty, xfce, or linux)
 local term = os.getenv("TERM") or "undefined"
-local term_program = os.getenv("TERM_PROGRAM") or "undefined"
+-- local term_program = os.getenv("TERM_PROGRAM") or "undefined"
 local text_terminals = term:find("alacritty") or term:find("xfce") or term:find("linux") or
     term:find("terminator")
 
