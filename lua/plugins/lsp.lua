@@ -9,15 +9,14 @@ local servers = {
         checkOnSave = {
           command = "clippy",
           extraArgs = {
-            "--all-targets",
-            "--all-features",
-            "--",
+            "--", "-D", "warnings",
             "-W", "clippy::all",
             "-W", "clippy::pedantic",
-            "-W", "clippy::nursery"
-            -- Uncomment the following line if you want to treat all warnings as errors:
-            -- ,"-D", "warnings"
-          },
+            "-W", "clippy::nursery",
+            "-W", "clippy::shadow_unrelated",
+            "-W", "clippy::shadow_same",
+            "-W", "clippy::print_stdout",
+            "-W", "clippy::default_numeric_fallback" },
         },
         diagnostics = {
           enable = true,
