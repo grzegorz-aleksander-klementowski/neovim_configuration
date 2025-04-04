@@ -30,6 +30,8 @@ require("lazy").setup({
   "lukas-reineke/indent-blankline.nvim", -- Indent Guides → pokazuje wcięcia za pomocą pionowych linii
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
   "phaazon/hop.nvim",                    -- Jump anyware in the bufferarea
+  require("plugins.hop"),                -- Include Hop configuration from a separate file
+
 
   -- 🚀 **nvim-cmp: Autocompletion Setup**
   {

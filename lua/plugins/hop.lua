@@ -1,8 +1,8 @@
--- plugins/hop.lua
+-- lua/plugins/hop.lua
 
 return {
-  'hadronized/hop.nvim',
-  version = "*", -- You can pin to latest stable version
+  'phaazon/hop.nvim', -- use the official repo
+  branch = 'v2',      -- ensure you're using the v2 branch
   opts = {
     keys = 'etovxqpdygfblzhckisuran',
   },
@@ -12,7 +12,7 @@ return {
 
     hop.setup(opts)
 
-    -- Keymaps
+    -- Set keymaps for hop commands
     vim.keymap.set('', 'f', function()
       hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
     end, { remap = true })
@@ -28,5 +28,5 @@ return {
     vim.keymap.set('', 'T', function()
       hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
     end, { remap = true })
-  end
+  end,
 }
