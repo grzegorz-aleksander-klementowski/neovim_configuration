@@ -50,7 +50,7 @@ require("fidget").setup({
   notification = {
     poll_rate = 5,                -- Refresh rate for notifications
     filter = vim.log.levels.INFO, -- Only show relevant notifications
-    history_size = 124,           -- Keep last 124 notifications
+    history_size = 248,           -- Keep last 124 notifications
     override_vim_notify = true,   -- Redirect `vim.notify()` to Fidget
     configs = { default = require("fidget.notification").default_config },
     redirect = function(msg, level, opts)
