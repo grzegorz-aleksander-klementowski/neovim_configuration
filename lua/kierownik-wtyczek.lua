@@ -30,7 +30,6 @@ require("lazy").setup({
   "lukas-reineke/indent-blankline.nvim", -- Indent Guides
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
   require("plugins.hop"),                -- Hop to any word and line by a simple way
-
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
 
   -- 🚀 **nvim-cmp: Autocompletion Setup**
