@@ -8,19 +8,9 @@ local servers = {
       ["rust-analyzer"] = {
         checkOnSave = {
           command = "clippy",
-          extraArgs = {
-            "--", "-D", "warnings",
-            "-W", "clippy::all",
-            "-W", "clippy::pedantic",
-            "-W", "clippy::nursery",
-            "-W", "clippy::shadow_unrelated",
-            "-W", "clippy::shadow_same",
-            "-W", "clippy::print_stdout",
-            "-W", "clippy::default_numeric_fallback" },
         },
         diagnostics = {
           enable = true,
-          disabled = {},
         },
       },
     },
