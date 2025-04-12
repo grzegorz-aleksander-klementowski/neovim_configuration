@@ -18,6 +18,7 @@ require("plugins.numb_check_jumped_line")       -- shows numbers of jumped line
 require("plugins.nvim-tree")                    -- Neovim Tree settings
 require("plugins.notifications")                -- Notification andstatus widget
 require("plugins.mason")                        -- LSP package manager
+require("plugins.colorizer")                    -- Colorize Hex and other color codes
 require("plugins.minimap")                      -- Mimimap config by „codewindow.nvim”
 local status, crates = pcall(require, "crates") -- Makes inbuild cargo a floating window. Manually initialize crates.nvim after plugins have loaded.
 if status then

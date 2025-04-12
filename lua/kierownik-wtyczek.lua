@@ -31,9 +31,15 @@ require("lazy").setup({
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
   require("plugins.hop"),                -- Hop to any word and line by a simple way
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
-  {
+  {                                      -- Inline support for Rust Crates.toml
     'saecki/crates.nvim',
     tag = 'stable',
+  },
+  { -- Support for hex colors in NeoVim
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = { -- set to setup table
+    },
   },
 
   -- 🚀 **nvim-cmp: Autocompletion Setup**

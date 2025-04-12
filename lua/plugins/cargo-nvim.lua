@@ -1,4 +1,5 @@
 -- lua/plugins/cargo.lua
+
 require("cargo").setup({
   -- Window settings
   float_window = true, -- Use floating window
