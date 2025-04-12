@@ -41,6 +41,13 @@ require("lazy").setup({
     opts = { -- set to setup table
     },
   },
+  { -- Pokazuje określenie zmiennych (signatures) w pł. oknach
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = {
+      -- cfg options
+    },
+  },
 
   -- 🚀 **nvim-cmp: Autocompletion Setup**
   {

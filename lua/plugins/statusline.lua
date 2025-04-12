@@ -1,8 +1,6 @@
--- Check if we're using a text terminal (Alacritty, xfce, or linux)
+-- Check if we're using a text terminal (Alacritty, xfce, linux, or Terminator)
 local term = os.getenv("TERM") or "undefined"
--- local term_program = os.getenv("TERM_PROGRAM") or "undefined"
-local text_terminals = term:find("alacritty") or term:find("xfce") or term:find("linux") or
-    term:find("terminator")
+local text_terminals = term:find("alacritty") or term:find("xfce") or term:find("linux") or term:find("terminator")
 
 -- Functions for lualine components
 local function lsp_client()
@@ -27,37 +25,33 @@ local function search_count()
   return string.format("[%d/%d]", result.current, result.total)
 end
 
--- Default lualine configuration (unchanged)
+-- Default lualine configuration
 local lualine_config = {
   options = {
-    theme = "gruvbox",   -- change to change whole NeoVim color theme
+    theme = "gruvbox",
     icons_enabled = true,
-    globalstatus = true, -- One status line for all windows
+    globalstatus = true,
     section_separators = { left = "", right = "" },
     component_separators = { left = "", right = "" },
     disabled_filetypes = { "dashboard", "NvimTree", "packer", "alpha" },
   },
   sections = {
     lualine_a = {
-      { "mode", fmt = function(str) return str:sub(1, 1) end } -- Shortened mode (N, I, V)
+      { "mode", fmt = function(str) return str:sub(1, 1) end }
     },
     lualine_b = {
-      { "branch", icon = "" }, -- Git branch
-      { "diff", symbols = { added = " ", modified = "", removed = " " } }, -- Git changes
+      { "branch", icon = "" },
+      { "diff", symbols = { added = " ", modified = "", removed = " " } },
       {
         "diagnostics",
         sources = { "nvim_diagnostic" },
         symbols = { error = " ", warn = " ", hint = " ", info = " " }
-      } -- LSP diagnostics
+      }
     },
     lualine_c = {
-      {
-        "filename",
-        path = 1, -- 0 = filename, 1 = relative path, 2 = absolute path
-        symbols = { modified = " ●", readonly = " ", unnamed = "[No Name]" }
-      },
-      { search_count },    -- Shows search results if searching
-      { macro_recording }, -- Shows macro recording status
+      { "filename", path = 1, symbols = { modified = " ●", readonly = " ", unnamed = "[No Name]" } },
+      { search_count },
+      { macro_recording },
     },
     lualine_x = {
       { lsp_client, icon = "" },
@@ -67,10 +61,10 @@ local lualine_config = {
     },
     lualine_y = {
       "progress",
-      { "location", icon = "" } -- Cursor position
+      { "location", icon = "" }
     },
     lualine_z = {
-      { function() return os.date('%H:%M:%S') end, icon = "" } -- Wrapped clock in a function
+      { function() return os.date('%H:%M:%S') end, icon = "" }
     },
   },
   inactive_sections = {
@@ -84,15 +78,12 @@ local lualine_config = {
   extensions = { "quickfix", "nvim-tree", "fugitive", "toggleterm" }
 }
 
--- If using a text terminal, override icons with text-based or emoji versions.
+-- Text terminal overrides
 if text_terminals then
-  -- Override section and component separators with simple text alternatives.
   lualine_config.options.section_separators = { left = "", right = "<" }
   lualine_config.options.component_separators = { left = "|", right = "|" }
-
-  -- In section lualine_b: override branch, diff, and diagnostic symbols.
   if lualine_config.sections.lualine_b[1] then
-    lualine_config.sections.lualine_b[1].icon = "BR" -- Replace branch icon with text
+    lualine_config.sections.lualine_b[1].icon = "BR"
   end
   if lualine_config.sections.lualine_b[2] and lualine_config.sections.lualine_b[2].symbols then
     lualine_config.sections.lualine_b[2].symbols.added = "+"
@@ -100,13 +91,11 @@ if text_terminals then
     lualine_config.sections.lualine_b[2].symbols.removed = "-"
   end
   if lualine_config.sections.lualine_b[3] and lualine_config.sections.lualine_b[3].symbols then
-    lualine_config.sections.lualine_b[3].symbols.error = "🚨" -- Emoji for errors
-    lualine_config.sections.lualine_b[3].symbols.warn = "⚠️" -- Emoji for warnings
-    lualine_config.sections.lualine_b[3].symbols.hint = "💡" -- Emoji for hints
-    lualine_config.sections.lualine_b[3].symbols.info = "ℹ️" -- Emoji for info
+    lualine_config.sections.lualine_b[3].symbols.error = "🚨"
+    lualine_config.sections.lualine_b[3].symbols.warn = "⚠️"
+    lualine_config.sections.lualine_b[3].symbols.hint = "💡"
+    lualine_config.sections.lualine_b[3].symbols.info = "ℹ️"
   end
-
-  -- In section lualine_x: override LSP and fileformat symbols.
   if lualine_config.sections.lualine_x[1] then
     lualine_config.sections.lualine_x[1].icon = "LSP"
   end
@@ -115,8 +104,6 @@ if text_terminals then
     lualine_config.sections.lualine_x[3].symbols.dos = "DOS"
     lualine_config.sections.lualine_x[3].symbols.mac = "MAC"
   end
-
-  -- In sections lualine_y and lualine_z: override location and clock icons.
   if lualine_config.sections.lualine_y[2] then
     lualine_config.sections.lualine_y[2].icon = "Loc"
   end
@@ -125,5 +112,14 @@ if text_terminals then
   end
 end
 
--- Set up lualine with the final configuration.
+-----------------------------------------------------------------
+-- Add the lsp_signature component from our separate module
+-----------------------------------------------------------------
+local lsp_signature = require("plugins.lsp_signature")
+table.insert(lualine_config.sections.lualine_c, {
+  function() return lsp_signature.status_signature(40) end,
+  color = { fg = "#ff9e64" },
+})
+
+-- Finalize lualine with the combined configuration
 require("lualine").setup(lualine_config)
