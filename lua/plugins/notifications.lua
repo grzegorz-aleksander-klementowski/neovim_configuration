@@ -117,7 +117,7 @@ vim.api.nvim_create_user_command("ShowFidgetNotifications", function()
   -- Format messages nicely
   local lines = {}
   for i, item in ipairs(messages) do
-    local line = string.format("[%d] %s | %s", i, item.time, item.message)
+    local line = string.format("[%d] %s | %s", i, item.time, item.message:gsub("\n", " "))
     table.insert(lines, line)
   end
 
