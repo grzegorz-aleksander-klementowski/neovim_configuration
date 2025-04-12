@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-field, undefined-global, unused-local, redundant-parameter, param-type-mismatch
+
 -- Load nvim-cmp (completion engine)
 local cmp = require("cmp")
 
@@ -10,34 +12,34 @@ local lspkind = require("lspkind")
 cmp.setup({
   -- Configure key mappings
   mapping = cmp.mapping.preset.insert({
-    ["<C-Space>"] = cmp.mapping.complete(),                                                         -- Manually trigger completion
-    ["<Tab>"] = cmp.mapping.select_next_item(),                                                     -- Next suggestion
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),                                                   -- Previous suggestion
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),                                              -- Confirm selection
-    ["<C-e>"] = cmp.mapping.abort(),                                                                -- Cancel completion menu
-    ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),     -- Accept with replacement
+    ["<C-Space>"] = cmp.mapping.complete(),                                                     -- Manually trigger completion
+    ["<Tab>"] = cmp.mapping.select_next_item(),                                                 -- Next suggestion
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),                                               -- Previous suggestion
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),                                          -- Confirm selection
+    ["<C-e>"] = cmp.mapping.abort(),                                                            -- Cancel completion menu
+    ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }), -- Accept with replacement
     ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),     -- Scroll documentation up
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),      -- Scroll documentation down
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- Scroll documentation up
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),  -- Scroll documentation down
   }),
 
   -- Define completion sources
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },     -- LSP-based suggestions
-    { name = "buffer" },       -- Suggest words from current file
-    { name = "path" },         -- File path completions
-    { name = "luasnip" },      -- Snippet completions
-    { name = "nvim_lua" },     -- Complete built-in Lua functions (useful for configuring NeoVim)
+    { name = "nvim_lsp" }, -- LSP-based suggestions
+    { name = "buffer" },   -- Suggest words from current file
+    { name = "path" },     -- File path completions
+    { name = "luasnip" },  -- Snippet completions
+    { name = "nvim_lua" }, -- Complete built-in Lua functions (useful for configuring NeoVim)
   }, {
-    { name = "calc" },         -- Math calculations
-    { name = "emoji" },        -- Emoji completions (for comments, if you care)
+    { name = "calc" },     -- Math calculations
+    { name = "emoji" },    -- Emoji completions (for comments, if you care)
   }),
 
   -- Define snippet expansion
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)       -- Use LuaSnip
+      luasnip.lsp_expand(args.body) -- Use LuaSnip
     end,
   },
 
@@ -50,15 +52,15 @@ cmp.setup({
   -- Formatting: icons, menu text
   formatting = {
     format = lspkind.cmp_format({
-      mode = "symbol_text",        -- Show icons and text
-      maxwidth = 50,               -- Prevent UI overflow
-      ellipsis_char = "...",       -- Cut-off long items
+      mode = "symbol_text",  -- Show icons and text
+      maxwidth = 50,         -- Prevent UI overflow
+      ellipsis_char = "...", -- Cut-off long items
     }),
   },
 
   -- Behavior: Completion settings
   experimental = {
-    ghost_text = true,     -- Show a preview of the completion suggestion inline
+    ghost_text = true, -- Show a preview of the completion suggestion inline
   },
 
   -- Sorting: Prioritize LSP over buffer suggestions
@@ -80,7 +82,7 @@ cmp.setup({
 -- **Setup Filetype-specific Completions**
 cmp.setup.filetype("gitcommit", {
   sources = cmp.config.sources({
-    { name = "git" },     -- Commit message autocompletions
+    { name = "git" }, -- Commit message autocompletions
     { name = "buffer" },
   }),
 })
@@ -96,9 +98,9 @@ cmp.setup.cmdline("/", {
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = "path" },        -- Path completion
+    { name = "path" },    -- Path completion
   }, {
-    { name = "cmdline" },     -- Command completions
+    { name = "cmdline" }, -- Command completions
   }),
 })
 
