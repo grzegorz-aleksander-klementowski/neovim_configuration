@@ -34,6 +34,7 @@ require("lazy").setup({
   "lukas-reineke/indent-blankline.nvim", -- Indent Guides
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
   "ahmedkhalf/project.nvim",             -- Discovers projects automatically
+  "sindrets/diffview.nvim",              -- Shows the differences between git versions
   require("plugins.hop"),                -- Hop to any word and line by a simple way
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
   {                                      -- Inline support for Rust Crates.toml
