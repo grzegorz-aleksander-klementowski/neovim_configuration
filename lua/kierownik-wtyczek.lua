@@ -33,6 +33,7 @@ require("lazy").setup({
   "wakatime/vim-wakatime",               -- Tracking activity on nvim via waketime.com
   "lukas-reineke/indent-blankline.nvim", -- Indent Guides
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
+  "ahmedkhalf/project.nvim",             -- Discovers projects automatically
   require("plugins.hop"),                -- Hop to any word and line by a simple way
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
   {                                      -- Inline support for Rust Crates.toml

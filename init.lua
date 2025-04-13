@@ -20,6 +20,7 @@ require("plugins.notifications")                -- Notification andstatus widget
 require("plugins.mason")                        -- LSP package manager
 require("plugins.colorizer")                    -- Colorize Hex and other color codes
 require("plugins.lsp_signature")                -- Add additional infos on the variables (signatures) in a floating window
+require("plugins.projects_nvim")                -- Configuring the rearching for the projects
 require("plugins.minimap")                      -- Mimimap config by „codewindow.nvim”
 local status, crates = pcall(require, "crates") -- Makes inbuild cargo a floating window. Manually initialize crates.nvim after plugins have loaded.
 if status then
