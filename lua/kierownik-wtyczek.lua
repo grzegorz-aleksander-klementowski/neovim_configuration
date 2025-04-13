@@ -20,6 +20,10 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "nvim-telescope/telescope.nvim",
   "williamboman/mason.nvim",
+  "nvim-lua/plenary.nvim",
+  "mfussenegger/nvim-dap",
+  "simrat39/rust-tools.nvim",
+
 
   -- Useful Extras
   "nvim-tree/nvim-tree.lua",             -- File Explorer
