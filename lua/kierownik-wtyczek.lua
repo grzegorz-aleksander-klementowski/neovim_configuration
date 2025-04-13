@@ -29,7 +29,7 @@ require("lazy").setup({
   "nvim-tree/nvim-tree.lua",             -- File Explorer
   "nvim-lualine/lualine.nvim",           -- Status Line
   "windwp/nvim-autopairs",               -- Auto-close brackets
-  "lewis6991/gitsigns.nvim",             -- Git integration
+  "lewis6991/gitsigns.nvim",             -- Git integration. Add signs (like vertical lines next to code line) to show git changes
   "wakatime/vim-wakatime",               -- Tracking activity on nvim via waketime.com
   "lukas-reineke/indent-blankline.nvim", -- Indent Guides
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
