@@ -36,6 +36,7 @@ require("lazy").setup({
   "ahmedkhalf/project.nvim",             -- Discovers projects automatically
   "sindrets/diffview.nvim",              -- Shows the differences between git versions
   require("plugins.hop"),                -- Hop to any word and line by a simple way
+  require("plugins.lspsaga"),            -- better LSP UI
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
   {                                      -- Inline support for Rust Crates.toml
     'saecki/crates.nvim',
@@ -90,4 +91,3 @@ require("lazy").setup({
 --[[ *** Do sprawdzenia potem *** ]]
 -- "nvimdev/lspsaga.nvim",             -- For enhanced diagnostics and code actions
 -- "Shatur/neovim-session-manager",   -- Session management for nvim (consider for version >= 0.10)
--- "Saecki/crates.nvim",               -- A NeoVim plugin for inline support in `Cargo.toml`
