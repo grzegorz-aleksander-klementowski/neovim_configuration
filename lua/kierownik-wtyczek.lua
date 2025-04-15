@@ -91,3 +91,4 @@ require("lazy").setup({
 --[[ *** Do sprawdzenia potem *** ]]
 -- "nvimdev/lspsaga.nvim",             -- For enhanced diagnostics and code actions
 -- "Shatur/neovim-session-manager",   -- Session management for nvim (consider for version >= 0.10)
+-- "yamatsum/nvim-cursorline",         -- Colored and better UI the cursor line
