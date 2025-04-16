@@ -31,9 +31,10 @@ else
 end
 
 -- -- Wczutuje Ustawiony Wygląd (Load Apperance Settings)
-require("ui.colors") -- Ustawione kraśniki (color settings)
-require("ui.indent") -- Pokazuje wcięcia za pomocą pionowych linii.
-require("ui.cursor")
+require("ui.colors")     -- Ustawione kraśniki (color settings)
+require("ui.indent")     -- Pokazuje wcięcia za pomocą pionowych linii.
+require("ui.cursor")     -- ustawia wskaźnik oraz linię, gdzie leży wskaźnik
+require("ui.breakpoint") -- Ustawia kropkę do zaznaczania linii
 --
 -- -- Wczytuje ustawiania formatu
 require("utils/format")
