@@ -75,11 +75,12 @@ require("lazy").setup({
   },
 
   -- ⚒️ Utilities and other plugins
-  "folke/which-key.nvim",  -- Adds help for keybindings
-  "numToStr/Comment.nvim", -- Easy commenting in any programming language
-  "nacro90/numb.nvim",     -- Shows the target line when jumping
-  "tpope/vim-fugitive",    -- Git commands integration
-  "wfxr/minimap.vim",      -- Code minimap
+  "folke/which-key.nvim",                        -- Adds help for keybindings
+  "numToStr/Comment.nvim",                       -- Easy commenting in any programming language
+  "nacro90/numb.nvim",                           -- Shows the target line when jumping
+  "tpope/vim-fugitive",                          -- Git commands integration
+  "wfxr/minimap.vim",                            -- Code minimap
+  "mbbill/undotree",                             -- Visualize tree of undo history
 
   -- Dependencies for various plugins
   "nvim-treesitter/nvim-treesitter-textobjects", -- Treesitter: see objects and select them
