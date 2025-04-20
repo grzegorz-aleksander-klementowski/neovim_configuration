@@ -35,8 +35,6 @@ require("lazy").setup({
   "j-hui/fidget.nvim",                   -- (Rust Analyzer) Status Window
   "ahmedkhalf/project.nvim",             -- Discovers projects automatically
   "sindrets/diffview.nvim",              -- Shows the differences between git versions
-  require("plugins.hop"),                -- Hop to any word and line by a simple way
-  require("plugins.lspsaga"),            -- better LSP UI
   "mg979/vim-visual-multi",              -- Wielowskaźnik wieloliniowy (multicursor multilines)
   {                                      -- Inline support for Rust Crates.toml
     'saecki/crates.nvim',
@@ -74,13 +72,18 @@ require("lazy").setup({
     -- end,
   },
 
+  -- Plugins with instended installation settings
+  require("plugins.hop"),     -- Hop to any word and line by a simple way
+  require("plugins.lspsaga"), -- Better LSP UI
+  require("ui.dressing"),     -- Additional UI for the floating windows
+
   -- ⚒️ Utilities and other plugins
-  "folke/which-key.nvim",                        -- Adds help for keybindings
-  "numToStr/Comment.nvim",                       -- Easy commenting in any programming language
-  "nacro90/numb.nvim",                           -- Shows the target line when jumping
-  "tpope/vim-fugitive",                          -- Git commands integration
-  "wfxr/minimap.vim",                            -- Code minimap
-  "mbbill/undotree",                             -- Visualize tree of undo history
+  "folke/which-key.nvim",  -- Adds help for keybindings
+  "numToStr/Comment.nvim", -- Easy commenting in any programming language
+  "nacro90/numb.nvim",     -- Shows the target line when jumping
+  "tpope/vim-fugitive",    -- Git commands integration
+  "wfxr/minimap.vim",      -- Code minimap
+  "mbbill/undotree",       -- Visualize tree of undo history
 
   -- Dependencies for various plugins
   "nvim-treesitter/nvim-treesitter-textobjects", -- Treesitter: see objects and select them
