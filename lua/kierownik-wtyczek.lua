@@ -76,6 +76,7 @@ require("lazy").setup({
   require("plugins.hop"),     -- Hop to any word and line by a simple way
   require("plugins.lspsaga"), -- Better LSP UI
   require("ui.dressing"),     -- Additional UI for the floating windows
+  require("ui.noice"),        -- Better notifications UI
 
   -- ⚒️ Utilities and other plugins
   "folke/which-key.nvim",  -- Adds help for keybindings
