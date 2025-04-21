@@ -74,7 +74,7 @@ return {
     ---------------------------
     messages = {
       enabled       = true,
-      view          = "popup",
+      view          = "notify",
       view_error    = "popup",
       view_warn     = "popup",
       view_history  = "split",
