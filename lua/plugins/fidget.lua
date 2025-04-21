@@ -1,3 +1,4 @@
+-- fidget plugin configuration mostly
 require("fidget").setup({
   -- Configure LSP Progress Notifications
   progress = {
