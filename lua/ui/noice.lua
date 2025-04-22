@@ -16,8 +16,8 @@ return {
         ["vim.lsp.util.stylize_markdown"]                = true,
         ["cmp.entry.get_documentation"]                  = true,
       },
-      hover = { enabled = true, view = "popup", opts = { border = { style = "rounded" } } },
-      signature = { enabled = true, view = "popup", opts = { border = { style = "rounded" } } },
+      hover = { enabled = true, view = "notify", opts = { border = { style = "rounded" } } },
+      signature = { enabled = true, view = "notify", opts = { border = { style = "rounded" } } },
       message = { enabled = true, view = "notify" },
       documentation = {
         view = "popup",

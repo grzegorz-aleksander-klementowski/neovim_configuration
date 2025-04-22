@@ -22,6 +22,7 @@ require("plugins.colorizer")                    -- Colorize Hex and other color 
 require("plugins.lsp_signature")                -- Add additional infos on the variables (signatures) in a floating window
 require("plugins.projects_nvim")                -- Configuring the rearching for the projects
 require("plugins.gitsigns")                     -- COnfiguring how to show git changes
+require("plugins.virt-column")                  -- Set vertical line that point the end of line avaible to text
 require("plugins.minimap")                      -- Mimimap config by „codewindow.nvim”
 local status, crates = pcall(require, "crates") -- Makes inbuild cargo a floating window. Manually initialize crates.nvim after plugins have loaded.
 if status then

@@ -79,12 +79,13 @@ require("lazy").setup({
   require("ui.noice"),        -- Better notifications UI
 
   -- ⚒️ Utilities and other plugins
-  "folke/which-key.nvim",  -- Adds help for keybindings
-  "numToStr/Comment.nvim", -- Easy commenting in any programming language
-  "nacro90/numb.nvim",     -- Shows the target line when jumping
-  "tpope/vim-fugitive",    -- Git commands integration
-  "wfxr/minimap.vim",      -- Code minimap
-  "mbbill/undotree",       -- Visualize tree of undo history
+  "folke/which-key.nvim",           -- Adds help for keybindings
+  "numToStr/Comment.nvim",          -- Easy commenting in any programming language
+  "nacro90/numb.nvim",              -- Shows the target line when jumping
+  "tpope/vim-fugitive",             -- Git commands integration
+  "wfxr/minimap.vim",               -- Code minimap
+  "mbbill/undotree",                -- Visualize tree of undo history
+  "lukas-reineke/virt-column.nvim", -- Add the line on the right that indicate the max chracter in line
 
   -- Dependencies for various plugins
   "nvim-treesitter/nvim-treesitter-textobjects", -- Treesitter: see objects and select them
