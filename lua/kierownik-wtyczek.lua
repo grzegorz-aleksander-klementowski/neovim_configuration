@@ -46,13 +46,13 @@ require("lazy").setup({
     opts = { -- set to setup table
     },
   },
-  { -- Pokazuje określenie zmiennych (signatures) w pł. oknach
-    "ray-x/lsp_signature.nvim",
-    event = "InsertEnter",
-    opts = {
-      -- cfg options
-    },
-  },
+  -- { -- Pokazuje określenie zmiennych (signatures) w pł. oknach
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "InsertEnter",
+  --   opts = {
+  --     -- cfg options
+  --   },
+  -- },
 
   -- 🚀 **nvim-cmp: Autocompletion Setup**
   {
@@ -77,6 +77,7 @@ require("lazy").setup({
   require("plugins.lspsaga"), -- Better LSP UI
   require("ui.dressing"),     -- Additional UI for the floating windows
   require("ui.noice"),        -- Better notifications UI
+  require("plugins/lsp_signature"), -- show floating windows of variables
 
   -- ⚒️ Utilities and other plugins
   "folke/which-key.nvim",           -- Adds help for keybindings
