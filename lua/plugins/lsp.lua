@@ -84,14 +84,6 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = "#FFC
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = "#00FFFF" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = "#00FF00" })
 
--- Enable Signature Help (Function Parameter Hints) on CursorHoldI
-vim.api.nvim_create_autocmd("CursorHoldI", {
-  pattern = "*",
-  callback = function()
-    vim.lsp.buf.signature_help()
-  end,
-})
-
 -- ============================================================================
 -- Diagnostic Background Highlighting
 -- ============================================================================
