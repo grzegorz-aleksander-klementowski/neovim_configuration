@@ -17,7 +17,9 @@ return {
       bind                             = true,
       doc_lines                        = 10,
       max_height                       = 12,
-      max_width                        = function() return vim.api.nvim_win_get_width(0) * 0.8 end,
+      max_width                        = function()
+        return math.floor(vim.api.nvim_win_get_width(0) * 0.8)
+      end,
       wrap                             = true,
       floating_window                  = true,
       floating_window_above_cur_line   = true,

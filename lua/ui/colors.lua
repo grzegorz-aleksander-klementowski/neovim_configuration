@@ -30,4 +30,4 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
--- vim.cmd("colorscheme default") -- can be changed to ei. „blue”
+vim.cmd("colorscheme default") -- can be changed to ei. „blue”, or „default”, „habamax”
