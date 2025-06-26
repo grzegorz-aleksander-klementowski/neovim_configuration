@@ -26,6 +26,14 @@ vim.g.maplocalleader = " " -- Local Leader also Space
 
 -- **→ SKRÓTY NACISKOWE ←** --
 
+-- pokaż float z diagnostyką w insert-mode pod <C-l>
+vim.keymap.set("i", "<C-l>", function()
+  vim.diagnostic.open_float(nil, { scope = "cursor" })
+end, { silent = true, desc = "Insert: pokaż diagnostykę w dymku" })
+
+vim.keymap.set("n", "<leader>gf", function()
+  vim.diagnostic.open_float(nil, { scope = "cursor" })
+end, { desc = "Diagnostic float" })
 
 -- Układ Poleceń NeoVim
 vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true }) -- Save file
