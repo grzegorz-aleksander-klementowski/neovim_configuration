@@ -59,23 +59,42 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- Configure Diagnostic Settings
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = "●", -- Small bullet as prefix for inline errors
-    spacing = 4,
-  },
-  signs = true,
-  underline = true,         -- This uses the DiagnosticUnderline* highlight groups
-  update_in_insert = false, -- Do not update diagnostics while typing
-  severity_sort = true,
-  float = {
-    focusable = true,
-    border = "rounded",
-    source = true,
-    header = "🏮️ LSP WARNING 🏮️", -- Custom title for float window
-    prefix = "⚠️ ",
-  },
+local diag_float_opts = {
+  border = "rounded",
+  source = true,
+  header = "🏮️ LSP WARNING 🏮️",
+  prefix = "⚠️ ",
+}
+
+-- state: Whether keep focus or not
+local float_focusable = false
+
+-- to configurate floats again
+local function reload_diag_config()
+  -- Configure Diagnostic Settings
+  vim.diagnostic.config({
+    virtual_text = {
+      prefix = "●", -- Small bullet as prefix for inline errors
+      spacing = 4,
+    },
+    signs = true,
+    underline = true,         -- This uses the DiagnosticUnderline* highlight groups
+    update_in_insert = false, -- Do not update diagnostics while typing
+    severity_sort = true,
+    float = vim.tbl_extend("force", { focusable = float_focusable }, diag_float_opts),
+  })
+end
+
+reload_diag_config()
+
+-- mapping to change float focusable
+vim.keymap.set("n", "<leader>tf", function()
+  float_focusable = not float_focusable
+  reload_diag_config()
+  vim.notify(("Diagnostic float focusable: %s"):format(tostring(float_focusable)))
+end, {
+  desc   = "Toggle LSP diagnostic float focusable",
+  silent = true,
 })
 
 -- Set up Diagnostic Undercurl Underlines for a curly effect

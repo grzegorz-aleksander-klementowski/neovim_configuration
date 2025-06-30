@@ -26,7 +26,7 @@ vim.g.maplocalleader = " " -- Local Leader also Space
 
 -- **→ SKRÓTY NACISKOWE ←** --
 
--- pokaż float z diagnostyką w insert-mode pod <C-l>
+-- pokaż float z diagnostyką w insert-mode oraz normal mode
 vim.keymap.set("i", "<C-l>", function()
   vim.diagnostic.open_float(nil, { scope = "cursor" })
 end, { silent = true, desc = "Insert: pokaż diagnostykę w dymku" })
@@ -56,3 +56,13 @@ vim.keymap.set("n", "<leader>n", ":NvimTreeFindFile<CR>", { silent = true }) -- 
 
 -- Minimap.vim
 vim.keymap.set("n", "<leader>m", ":MinimapToggle<CR>", { silent = true, desc = "Toggle minimap" }) -- Toggle the Minimap
+
+-- mapping to change float focusable, in `lsp.lua` (thus connected the `lsp.lua` configuration):
+--[[ vim.keymap.set("n", "<leader>tf", function()
+  float_focusable = not float_focusable
+  reload_diag_config()
+  vim.notify(("Diagnostic float focusable: %s"):format(tostring(float_focusable)))
+end, {
+  desc   = "Toggle LSP diagnostic float focusable",
+  silent = true,
+}) ]]
